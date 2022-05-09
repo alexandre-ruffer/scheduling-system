@@ -17,6 +17,7 @@ mysqli_select_db($con, 'insertion') or die(mysql_error());
     $posts[3] = $_POST['room'];
 	  $posts[4] = $_POST['start_time'];
 	  $posts[5] = $_POST['end_time'];
+	  $posts[6] = $_POST['building'];
     return $posts;
 }
 
@@ -24,7 +25,7 @@ if (isset($_POST['insert'])) {
 	
 	$data = getPosts();
 
-	$existing_Query ="SELECT * FROM `addtable` WHERE `faculty`='$data[0]' OR `course`='$data[1]' OR `subject`='$data[2]' OR `room`='$data[3]' OR `start_time`='$data[4]' OR `end_time`='$data[5]'";
+	$existing_Query ="SELECT * FROM `addtable` WHERE `faculty`='$data[0]' AND `course`='$data[1]' AND `subject`='$data[2]' AND `room`='$data[3]' AND `start_time`='$data[4]' AND `end_time`='$data[5]' AND `building`='$data[6]'";
 	$existing_Result = mysqli_query($con, $existing_Query);
 	if(0 < mysqli_num_rows ($existing_Result)){
 		echo '<script type="text/javascript">
@@ -32,7 +33,7 @@ if (isset($_POST['insert'])) {
                          window.location="home.php";
                            </script>';
 	} else {
-    $insert_Query = "INSERT INTO `addtable` (`faculty`, `course`, `subject`, `room`, `start_time`, `end_time`) VALUES ('$data[0]', '$data[1]', '$data[2]', '$data[3]', '$data[4]', '$data[5]')";
+    $insert_Query = "INSERT INTO `addtable` (`faculty`, `course`, `subject`, `room`, `start_time`, `end_time`,`building`) VALUES ('$data[0]', '$data[1]', '$data[2]', '$data[3]', '$data[4]', '$data[5]', '$data[6]')";
     $insert_Result = mysqli_query($con, $insert_Query);
     
     if ($insert_Result) {

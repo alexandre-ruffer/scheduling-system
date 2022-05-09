@@ -50,6 +50,15 @@ body {
 			<br>
 			<br>
 			<br>
+			«<div align="center">
+			<legend>List of buildings</legend></fieldset>
+			<?php
+				 include_once("buildinglist.php");
+			?>
+			<br>
+			<br>
+			<br>
+			<br>
 			<div align="center">
 			<legend>List of class time</legend></fieldset>
 			<?php

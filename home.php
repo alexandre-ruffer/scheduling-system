@@ -240,7 +240,79 @@ while($row2 = mysqli_fetch_array($result2))
         </select>
         
 	
+ <?php
+
+// php select option value from database
+
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$databaseName = "insertion";
+
+// connect to mysql database
+
+$connect = mysqli_connect($hostname, $username, $password, $databaseName);
+
+// mysql select query
+$query = "SELECT * FROM `buildings`";
+
+// for method 1
+
+$result1 = mysqli_query($connect, $query);
+
+// for method 2
+$query = "SELECT * FROM `buildings`";
+$result2 = mysqli_query($connect, $query);
+
+
+$options = "";
+
+while($row2 = mysqli_fetch_array($result2))
+{
+    $options = $options."<option>$row2[1]</option>";
+}
+
+ 
+?>
+
+
+
+<html>
+<head>
+</head>
+<body>
+<meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
         
+		<!-- Method Two -->
+        <div class="form-group">
+			<label class="col-md-4 control-label" for="building">Building</label> 
+			<div class="col-md-5">
+		<select  id="building" name="building"  class="form-control">
+            <?php echo $options;?>
+        </select>
+		</div>
+		</div>
+		
+        <!--Method One-->
+        
+       
+
+            <?php while($row2 = mysqli_fetch_array($result2)):;?>
+
+            <option value="<?php echo $row2[0];?>"><?php echo $row2[1];?></option>
+			
+
+            <?php endwhile;?>
+
+        </select>       
+		
+        		<!-- Button -->        
 
 
 
@@ -385,15 +457,13 @@ while($row2 = mysqli_fetch_array($result2))
             <?php endwhile;?>
 
         </select>
-		<!-- Button -->
+
 				<div class="form-group"  align="right">
 				  <label class="col-md-4 control-label" for="submit"></label>
 				  <div class="col-md-5">
 					<button id="submit" name="insert" class="btn btn-primary"> Set </button>
 				  </div>
 				</div>
-        
-        
 </fieldset>
 			</form>
 			
@@ -405,8 +475,6 @@ while($row2 = mysqli_fetch_array($result2))
 </head>
 
 </html>
-
-
 
 
 

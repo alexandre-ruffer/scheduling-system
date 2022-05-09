@@ -4,12 +4,32 @@
 ?>
 <html>
 <head>
+<style>
 
+body {
+	background-image: url();
+	background-color: white;
+}
+th {
+	text-align: center;
+}
+tr {
+	 height: 30px;
+}
+td {
+    padding-top: 5px;
+	padding-left: 20px;	
+	padding-bottom: 5px;	
+	height: 20px;
+}
+
+
+</body>
+</style>
 </head>
 <body><br>
-<div align="center">
-			<fieldset>
-            <legend>Schedule</legend>
+<div class="container">
+
 <body>
     <?php
      echo "<tr>
@@ -24,30 +44,18 @@
 			   mysql_connect($host,$username,$password) or die(mysql_error()); 
                mysql_select_db($database) or die(mysql_error()); 
 
-                    $query = ("SELECT * FROM addtable");
+                    $query = ("SELECT * FROM buildings");
                     $result = mysql_query($query) or die(mysql_error());
                     echo "<div class='container'><table width='' class='table table-bordered' border='1' >
                             <tr>
-                                <th>Faculty</th>
-								<th>Course</th>
-                                <th>Subject</th>
-								<th>Room</th>
-								<th>Building</th>
-								<th>Start time</th>
-								<th>End time</th>
-                                <th>Action</th>
+                            <th>Buildings</th>
+								            <th>Action</th>
                             </tr>";
                         while($row = mysql_fetch_array($result))
                         {
                         echo "<tr>";
-                        echo "<td>" . $row['faculty'] . "</td>";
-						echo "<td>" . $row['course'] . "</td>";
-                        echo "<td>" . $row['subject'] . "</td>";
-						echo "<td>" . $row['room'] . "</td>";
-						echo "<td>" . $row['building'] . "</td>";
-						echo "<td>" . $row['start_time'] . "</td>";
-						echo "<td>" . $row['end_time'] . "</td>";
-                        echo "<td><form class='form-horizontal' method='post' action='tablelist.php'>
+                        echo "<td>" . $row['building'] . "</td>";
+                        echo "<td><form class='form-horizontal' method='post' action='buildinglist.php'>
                         <input name='id' type='hidden' value='".$row['id']."';>
                         <input type='submit' class='btn btn-danger' name='delete' value='Delete'>
                         </form></td>";
@@ -62,14 +70,14 @@
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
 		echo '<script type="text/javascript">
-                      alert("Schedule Successfuly Deleted");
+                      alert("Building Successfuly Deleted");
                          location="tablelist.php";
                            </script>';
     }
     if(isset($_POST['id']))
     {
     $id = mysql_real_escape_string($_POST['id']);
-    $sql = mysql_query("DELETE FROM addtable WHERE id='$id'");
+    $sql = mysql_query("DELETE FROM buildings WHERE id='$id'");
     if(!$sql)
     {
         echo ("Could not delete rows" .mysql_error());
@@ -81,12 +89,6 @@
 </form>
 </div>
 </div>
-</div>
-
-<div align="center">
-<br>
-<a href="home.php"><input type='submit' class='btn btn-success' name='delete' value='New'></a>
-<a href="Index.php"><input type='submit' class='btn btn-primary' name='delete' value='Logout'></a>
 </div>
 </div>
 	</body>
