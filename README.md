@@ -2,10 +2,10 @@
 
 Source: https://code-projects.org/simple-scheduling-system-in-php-with-source-code/
 
-**About Project:**
+**About Project:** <br /> <br />
 Simple Scheduling System is developed using PHP, CSS, Bootstrap, and JavaScript. Talking about the project, it contains almost all the essential features. This project contains an admin side where Admin can set schedules, manage Faculty, Subjects, Room, Time, Course and view lists. The Admin plays an important role in the management of the system. In this project, the user has to perform all the main functions from the Admin side. A user can also register as a new user if he/she does not have an account.
 
-**About System:**
+**About System:** <br /> <br />
 The Admin has full control of the system, all the functions are to be performed from Admin panel. Here, the admin can set different schedules easily. In order to set schedules, the user has to select Faculty, Course, Subject, Room, enter start and end time. The user has to insert details on each and every module. While adding subjects the user has to provide subject code with a description. The user should provide Faculty name and Designation in order to add Faculty. Adding a course is also similar to adding subjects which can be done by providing Course code and course name. Also, the user just has to provide a room number and enter starting time, ending time to add Room details and time.
 
 **Features:**
