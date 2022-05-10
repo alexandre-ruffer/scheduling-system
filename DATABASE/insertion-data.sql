@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2022 at 10:24 PM
+-- Generation Time: May 10, 2022 at 10:23 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -45,6 +45,16 @@ CREATE TABLE `addtable` (
 -- RELATIONSHIPS FOR TABLE `addtable`:
 --
 
+--
+-- Dumping data for table `addtable`
+--
+
+INSERT INTO `addtable` (`id`, `faculty`, `course`, `subject`, `room`, `start_time`, `end_time`, `building`) VALUES
+(8, 'Engineering', 'Computer Science', 'Computer Programming 1', 'SB14', '07:00 am', '08:00 am', '1A'),
+(9, 'Management Studies', 'Web Development', 'Digital Design', 'DM28', '09:00 am', '11:00 am', '2A'),
+(11, 'Natural Science', 'The History of Ancient Philosophy', 'Freedom and Equality Across Borders', 'PK22', '11:00 am', '14:00 pm', '3A'),
+(12, 'Engineering', 'Computer Science', 'Computer Programming 1', 'SB14', '16:00 pm', '18:00 pm', '1B');
+
 -- --------------------------------------------------------
 
 --
@@ -61,6 +71,17 @@ CREATE TABLE `admin` (
 -- RELATIONSHIPS FOR TABLE `admin`:
 --
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin'),
+(2, 'demo', 'demo'),
+(3, 'admin', 'admin'),
+(4, 'zimbora', 'zimbora'),
+(5, 'admin', 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -75,6 +96,18 @@ CREATE TABLE `buildings` (
 --
 -- RELATIONSHIPS FOR TABLE `buildings`:
 --
+
+--
+-- Dumping data for table `buildings`
+--
+
+INSERT INTO `buildings` (`id`, `building`) VALUES
+(19, '1A'),
+(20, '1B'),
+(21, '2A'),
+(23, '2B'),
+(24, '3A'),
+(25, '3B');
 
 -- --------------------------------------------------------
 
@@ -91,6 +124,24 @@ CREATE TABLE `course` (
 --
 -- RELATIONSHIPS FOR TABLE `course`:
 --
+
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`course_id`, `course_code`, `course_name`) VALUES
+(2, 'BSCS', 'Computer Science'),
+(3, 'CS55', 'Computer Engineering '),
+(6, 'CS02', 'Computer Security '),
+(9, 'WD51', 'Web Development'),
+(10, '5051', 'Hardware and Networking'),
+(11, '6002', 'Advance Wordpress'),
+(12, 'ME55', 'Micro Economics'),
+(13, 'ST00', 'Stock Trading'),
+(14, 'MA85', 'Macro Economics'),
+(15, 'AP55', 'The History of Ancient Philosophy'),
+(16, 'BC25', 'Biological Anthropology Course'),
+(17, 'BE05', 'Higher Program in Business Management');
 
 -- --------------------------------------------------------
 
@@ -128,6 +179,18 @@ CREATE TABLE `faculty` (
 -- RELATIONSHIPS FOR TABLE `faculty`:
 --
 
+--
+-- Dumping data for table `faculty`
+--
+
+INSERT INTO `faculty` (`faculty_id`, `faculty_name`, `designation`) VALUES
+(14, 'Engineering', 'CS-OJT Coordinator'),
+(16, 'Information Technology', 'Computer Security'),
+(17, 'Management Studies', 'Elective 3'),
+(19, 'Philosophy', 'Demo2'),
+(20, 'Natural Science', 'Demo3'),
+(21, 'Commerce', 'Demo4');
+
 -- --------------------------------------------------------
 
 --
@@ -142,6 +205,21 @@ CREATE TABLE `rooms` (
 --
 -- RELATIONSHIPS FOR TABLE `rooms`:
 --
+
+--
+-- Dumping data for table `rooms`
+--
+
+INSERT INTO `rooms` (`id`, `room`) VALUES
+(3, 'SB14'),
+(8, 'CP09'),
+(9, 'SB11'),
+(10, 'CP19'),
+(11, 'DM28'),
+(12, 'NB15'),
+(13, 'SS36'),
+(14, 'PK22'),
+(15, 'Zara');
 
 -- --------------------------------------------------------
 
@@ -159,6 +237,28 @@ CREATE TABLE `subject` (
 -- RELATIONSHIPS FOR TABLE `subject`:
 --
 
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`subject_id`, `subject_code`, `subject_description`) VALUES
+(2, 'CS19', 'Computer Programming 1'),
+(3, 'CP02', 'Computer Simulation'),
+(5, 'DM15', 'Digital Design'),
+(6, 'WP01', 'Web Programming 1'),
+(8, 'NA08', 'Network Analyst'),
+(9, 'SM85', 'Databases'),
+(10, 'OP55', 'OOP C++'),
+(11, 'AS86', 'Microprocessor and Assembly Language'),
+(12, 'MM80', 'Discrete Mathematics'),
+(13, 'NM65', ' 	Marketing Management'),
+(14, 'SD01', 'System Analysis and Design'),
+(15, 'EE54', 'Economics'),
+(16, 'PO69', ' Freedom and Equality Across Borders '),
+(17, 'PH88', ' The Philosophy of Philosophy '),
+(18, 'BI09', 'Biology'),
+(19, 'BU56', 'Business Studies');
+
 -- --------------------------------------------------------
 
 --
@@ -174,6 +274,23 @@ CREATE TABLE `timer` (
 --
 -- RELATIONSHIPS FOR TABLE `timer`:
 --
+
+--
+-- Dumping data for table `timer`
+--
+
+INSERT INTO `timer` (`id`, `start_time`, `end_time`) VALUES
+(16, '07:00 am', '08:00 am'),
+(17, '08:00 am', '09:00 am'),
+(18, '09:00 am', '10:00 am'),
+(19, '10:00 am', '11:00 am'),
+(20, '11:00 am', '12:00 pm'),
+(21, '12:00 pm', '13:00 pm'),
+(22, '13:00 pm', '14:00 pm'),
+(23, '14:00 pm', '15:00 pm'),
+(24, '15:00 pm', '16:00 pm'),
+(25, '16:00 pm', '17:00 pm'),
+(26, '17:00 pm', '18:00 pm');
 
 --
 -- Indexes for dumped tables
@@ -241,25 +358,25 @@ ALTER TABLE `timer`
 -- AUTO_INCREMENT for table `addtable`
 --
 ALTER TABLE `addtable`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `buildings`
 --
 ALTER TABLE `buildings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `data`
@@ -271,25 +388,25 @@ ALTER TABLE `data`
 -- AUTO_INCREMENT for table `faculty`
 --
 ALTER TABLE `faculty`
-  MODIFY `faculty_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `faculty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `timer`
 --
 ALTER TABLE `timer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- Database: `phpmyadmin`
 --
@@ -563,6 +680,13 @@ CREATE TABLE `pma__table_uiprefs` (
 -- RELATIONSHIPS FOR TABLE `pma__table_uiprefs`:
 --
 
+--
+-- Dumping data for table `pma__table_uiprefs`
+--
+
+INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
+('root', 'insertion', 'rooms', '{\"sorted_col\":\"`rooms`.`room`  DESC\"}', '2022-04-19 00:00:47');
+
 -- --------------------------------------------------------
 
 --
@@ -601,6 +725,13 @@ CREATE TABLE `pma__userconfig` (
 --
 -- RELATIONSHIPS FOR TABLE `pma__userconfig`:
 --
+
+--
+-- Dumping data for table `pma__userconfig`
+--
+
+INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
+('root', '2022-05-10 20:13:34', '{\"Console\\/Mode\":\"collapse\"}');
 
 -- --------------------------------------------------------
 
