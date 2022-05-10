@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2022 at 10:46 PM
+-- Generation Time: May 10, 2022 at 10:49 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -290,59 +290,6 @@ ALTER TABLE `subject`
 --
 ALTER TABLE `timer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-
---
--- Metadata
---
-USE `phpmyadmin`;
-
---
--- Metadata for table addtable
---
-
---
--- Metadata for table admin
---
-
---
--- Metadata for table buildings
---
-
---
--- Metadata for table course
---
-
---
--- Metadata for table data
---
-
---
--- Metadata for table faculty
---
-
---
--- Metadata for table rooms
---
-
---
--- Dumping data for table `pma__table_uiprefs`
---
-
-INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('root', 'insertion', 'rooms', '{\"sorted_col\":\"`rooms`.`room`  DESC\"}', '2022-04-19 00:00:47');
-
---
--- Metadata for table subject
---
-
---
--- Metadata for table timer
---
-
---
--- Metadata for database insertion
---
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
