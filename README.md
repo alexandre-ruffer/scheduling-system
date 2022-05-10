@@ -29,7 +29,7 @@ _Now Connecting Database..._
 **4th Step:** Open a browser and go to URL “http://localhost/phpmyadmin/” <br />
 **5th Step:** Then, click on the databases tab <br />
 **6th Step:** Create a database naming “insertion” and then click on the import tab <br />
-**7th Step:** Click on browse file and select “insertion.sql” file which is inside “DATABASE” folder <br />
+**7th Step:** Click on browse file and on the “DATABASE” folder select “insertion.sql” file or “insertion-data.sql” (Creates database with demo data) <br />
 **8th Step:** Click on go.
 
 _After Creating Database..._
