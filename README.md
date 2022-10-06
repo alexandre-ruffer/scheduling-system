@@ -34,7 +34,7 @@ _Now Connecting Database..._
 
 _After Creating Database..._
 
-9th Step: Open a browser and go to URL “http://localhost/schedulingsystem/”
+9th Step: Open a browser and go to URL http://localhost/schedulingsystem/
 
 
 **Login Details:**
