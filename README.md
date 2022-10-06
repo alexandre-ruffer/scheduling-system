@@ -26,7 +26,7 @@ The Admin has full control of the system, all the functions are to be performed 
 
 _Now Connecting Database..._
 
-**4th Step:** Open a browser and go to URL “http://localhost/phpmyadmin/” <br />
+**4th Step:** Open a browser and go to URL http://localhost/phpmyadmin/ <br />
 **5th Step:** Then, click on the databases tab <br />
 **6th Step:** Create a database naming “insertion” and then click on the import tab <br />
 **7th Step:** Click on browse file and on the “DATABASE” folder select insertion.sql file or insertion-data.sql that creates the database with demo data <br />
